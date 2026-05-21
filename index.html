@@ -60,6 +60,32 @@
         <p>Penghargaan dan prestasi yang telah diraih oleh siswa dan sekolah.</p>
     </section>
 
+    <!-- Voiceflow Chatbot Script -->
+    <script type="text/javascript">
+        (function() {
+            var opts = {
+                height: 600,
+                width: 400,
+                divId: "voiceflow-widget"
+            };
+            var st = document.createElement('script');
+            st.type = 'text/javascript';
+            st.async = true;
+            st.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
+            st.addEventListener('load', function() {
+                window.voiceflow.createChat({
+                    projectID: '6a09289ea62d285256e0529f',
+                    ...opts
+                });
+            });
+            var firstScript = document.getElementsByTagName('script')[0];
+            firstScript.parentNode.insertBefore(st, firstScript);
+        })();
+    </script>
+
+    <!-- Voiceflow Widget Container -->
+    <div id="voiceflow-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;"></div>
+
     <script src="js/navigasi.js"></script>
 </body>
 </html>
