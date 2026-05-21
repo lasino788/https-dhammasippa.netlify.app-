@@ -27,6 +27,7 @@
                 <li><a href="#kegiatan" class="nav-link">Kegiatan</a></li>
                 <li><a href="#asesmen" class="nav-link">Asesmen</a></li>
                 <li><a href="#prestasi" class="nav-link">Prestasi</a></li>
+                <li><a href="#joke" class="nav-link">Joke</a></li>
             </ul>
         </div>
     </nav>
@@ -60,6 +61,26 @@
         <p>Penghargaan dan prestasi yang telah diraih oleh siswa dan sekolah.</p>
     </section>
 
+    <!-- Joke Generator Section -->
+    <section id="joke" class="content-section joke-section">
+        <h2>😄 Joke Generator - Hiburan Santai</h2>
+        <p>Dapatkan lelucon acak untuk melepas penat. Klik tombol di bawah!</p>
+        
+        <div class="joke-container">
+            <div class="joke-box" id="jokeBox">
+                <p class="joke-text">Klik tombol di bawah untuk mendapatkan lelucon acak! 🎉</p>
+            </div>
+            
+            <button class="joke-btn" id="jokeBtn" onclick="getJoke()">
+                Dapatkan Lelucon Acak
+            </button>
+            
+            <button class="joke-btn joke-btn-secondary" id="copyBtn" onclick="copyJoke()" style="display: none;">
+                Salin Lelucon
+            </button>
+        </div>
+    </section>
+
     <!-- Voiceflow Chatbot Script -->
     <script type="text/javascript">
         (function() {
@@ -87,5 +108,6 @@
     <div id="voiceflow-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;"></div>
 
     <script src="js/navigasi.js"></script>
+    <script src="js/joke-generator.js"></script>
 </body>
 </html>
