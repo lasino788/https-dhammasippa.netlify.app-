@@ -176,6 +176,90 @@ body {
     font-size: 1.1rem;
 }
 
+/* ===== Joke Section Styles ===== */
+.joke-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.joke-section h2 {
+    color: white;
+    border-left-color: #ffd700;
+}
+
+.joke-section p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.joke-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.joke-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    animation: slideIn 0.5s ease;
+}
+
+.joke-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: white;
+    font-weight: 500;
+}
+
+.joke-btn {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #333;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    max-width: 300px;
+}
+
+.joke-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+.joke-btn:active {
+    transform: translateY(0);
+}
+
+.joke-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.joke-btn-secondary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: 2px solid white;
+}
+
+.joke-btn-secondary:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
 /* ===== Sidebar Scroll Custom ===== */
 .sidebar-scroll::-webkit-scrollbar {
     width: 4px;
@@ -195,6 +279,17 @@ body {
     from {
         opacity: 0;
         transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
     }
     to {
         opacity: 1;
@@ -230,7 +325,7 @@ body {
     }
 
     .nav-menu.active {
-        max-height: 300px;
+        max-height: 400px;
     }
 
     .nav-link {
@@ -259,6 +354,20 @@ body {
     .content-section h2 {
         font-size: 1.5rem;
     }
+
+    .joke-box {
+        min-height: 100px;
+        padding: 1.5rem;
+    }
+
+    .joke-text {
+        font-size: 1rem;
+    }
+
+    .joke-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -284,5 +393,24 @@ body {
 
     .content-section p {
         font-size: 1rem;
+    }
+
+    .joke-container {
+        gap: 1rem;
+    }
+
+    .joke-box {
+        min-height: 80px;
+        padding: 1rem;
+    }
+
+    .joke-text {
+        font-size: 0.95rem;
+    }
+
+    .joke-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
+        width: 100%;
     }
 }
