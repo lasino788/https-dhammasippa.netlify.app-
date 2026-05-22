@@ -4,7 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhammasippa - Menu Navigasi</title>
-    <link rel="stylesheet" href="css/navigasi.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #2c3e50;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        .navbar-brand h1 {
+            color: #fff;
+            font-size: 1.8rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #f39c12;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Joke Section */
+        .joke-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .joke-container {
+            margin-top: 2rem;
+        }
+
+        .joke-box {
+            background: white;
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .joke-text {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-style: italic;
+        }
+
+        .joke-btn {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0.5rem;
+        }
+
+        .joke-btn:hover {
+            background-color: #e67e22;
+        }
+
+        .joke-btn-secondary {
+            background-color: #3498db;
+        }
+
+        .joke-btn-secondary:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #2c3e50;
+                gap: 0;
+                padding: 1rem 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                padding: 1rem;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -23,6 +238,7 @@
             
             <!-- Navigation Menu -->
             <ul class="nav-menu" id="navMenu">
+                <li><a href="#beranda" class="nav-link">Beranda</a></li>
                 <li><a href="#kbm" class="nav-link">KBM</a></li>
                 <li><a href="#kegiatan" class="nav-link">Kegiatan</a></li>
                 <li><a href="#asesmen" class="nav-link">Asesmen</a></li>
@@ -32,8 +248,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero hero-bg-custom">
+    <!-- Hero Section dengan Background Image -->
+    <section id="beranda" class="hero" style="background-image: url('https://drive.google.com/uc?export=view&id=1t1s3Gkio6UXbdI-Jk_ppNJ25xPvsenrK');">
         <div class="hero-content">
             <h2>Selamat Datang di Dhammasippa</h2>
             <p>Platform Pembelajaran Agama Buddha dan Budi Pekerti</p>
@@ -107,7 +323,51 @@
     <!-- Voiceflow Widget Container -->
     <div id="voiceflow-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;"></div>
 
-    <script src="js/navigasi.js"></script>
-    <script src="js/joke-generator.js"></script>
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Joke Generator
+        const jokes = [
+            { setup: "Mengapa Buddha tidak makan gula?", punchline: "Karena dia sudah menemukan jalan tengah! 🧘" },
+            { setup: "Apa bedanya monk dengan programmer?", punchline: "Monk mencari enlightenment, programmer mencari bug! 🐛" },
+            { setup: "Bagaimana cara membuat meditasi lebih menyenangkan?", punchline: "Dengan mindfulness dan Wi-Fi yang bagus! 📶" },
+            { setup: "Apa yang dikatakan Buddha ke hot dog vendor?", punchline: "Jadikan aku satu dengan segalanya! 🌭" },
+            { setup: "Mengapa siswa agama Buddha selalu tenang?", punchline: "Karena mereka sudah mencapai inner peace! ☮️" },
+            { setup: "Apa hobby favorit Bodhisattva?", punchline: "Meditasi... sampai habis waktu istirahat! ⏰" },
+            { setup: "Bagaimana jika Buddha menjadi influencer?", punchline: "Dia akan post: 'Keep calm and meditate on!' 🧘‍♂️" },
+            { setup: "Apa yang dibilang monk saat lapar?", punchline: "Aku perlu untuk find inner piece... dengan nasi goreng! 🍚" }
+        ];
+
+        let currentJoke = null;
+
+        function getJoke() {
+            currentJoke = jokes[Math.floor(Math.random() * jokes.length)];
+            const jokeBox = document.getElementById('jokeBox');
+            jokeBox.innerHTML = `<p class="joke-text"><strong>${currentJoke.setup}</strong><br><br>${currentJoke.punchline}</p>`;
+            document.getElementById('copyBtn').style.display = 'inline-block';
+        }
+
+        function copyJoke() {
+            if (currentJoke) {
+                const jokeText = `${currentJoke.setup}\n${currentJoke.punchline}`;
+                navigator.clipboard.writeText(jokeText).then(() => {
+                    alert('Lelucon berhasil disalin! 📋');
+                });
+            }
+        }
+    </script>
 </body>
 </html>
